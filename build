@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker run --rm trzeci/emscripten:sdk-tag-1.37.18-32bit emcc --version
+docker run --rm trzeci/emscripten:sdk-tag-1.37.18-64bit emcc --version
