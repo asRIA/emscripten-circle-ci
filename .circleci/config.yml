@@ -23,6 +23,7 @@ jobs:
       - run:
           name: run tests
           command: |
+            ls -la /
             pwd
             ls -la
             emcc --version
