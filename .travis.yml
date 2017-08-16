@@ -4,4 +4,4 @@ services:
   - docker
 
 script:
-- docker run --rm trzeci/emscripten:sdk-tag-1.37.18-64bit -c "emcc --version"
+- docker run --rm trzeci/emscripten:sdk-tag-1.37.18-64bit emcc --version
