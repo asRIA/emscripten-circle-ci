@@ -4,8 +4,8 @@ version: 2
 jobs:
   build:
     docker:
-      - entrypoint: /entrypoint
       - image: trzeci/emscripten:sdk-tag-1.37.18-64bit
+        entrypoint: /entrypoint
       
     working_directory: ~/repo
 
