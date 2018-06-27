@@ -1,7 +1,14 @@
 sudo: required
 
+language: node_js
+node_js:
+  - node
+
 services:
   - docker
 
 script:
+- printf '#include <iostream>\nint main() { std::cout << "HELLO WORLD!" << std::endl; return 0; }' > hello.cpp
 - docker run --rm trzeci/emscripten emcc --version
+- docker run --rm -v $(pwd):/src trzeci/emscripten emcc hello.cpp -o hello.js
+- node hello.js
