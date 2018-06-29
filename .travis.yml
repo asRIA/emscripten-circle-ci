@@ -6,11 +6,15 @@ node_js:
 
 services:
   - docker
+  
+matrix:
+  include:
+  - env: IMAGE=trzeci/emscripten
 
 before_install:
-  - docker run -dit --name emscripten -v $(pwd):/src trzeci/emscripten bash
+  - docker run -dit --name emscripten -v $(pwd):/src $IMAGE bash
 
 script:
 - docker exec -it emscripten emcc --version
 - docker exec -it emscripten make
-- node hello.js
+- cd out && node main.js
