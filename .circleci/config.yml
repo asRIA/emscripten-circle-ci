@@ -12,6 +12,5 @@ jobs:
       - run:
           name: run tests
           command: |
-            printf '#include <iostream>\nint main() { std::cout << "HELLO FROM '$IMAGE'" << std::endl; return 0; }' > hello.cpp
-            emcc hello.cpp -o hello.js
+            make
             node hello.js
