@@ -12,7 +12,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: run tests
-          command: |
-            make
-            node hello.js
+          name: compile tests
+          command: make
+      - run:
+          name: Run code
+          working_directory: ~/repo/out
+          command: node main.js
