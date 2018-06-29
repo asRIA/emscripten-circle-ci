@@ -8,6 +8,8 @@ OUT_DIR=out
 all: directories main
 
 directories: ${OUT_DIR}
+
+${OUT_DIR}:
 	${MKDIR_P} ${OUT_DIR}
 
 main: src/main.cpp
