@@ -5,10 +5,12 @@ jobs:
   build:
     docker:
       - image: trzeci/emscripten
+      - image: trzeci/emscripten-slim
       
     working_directory: ~/repo
 
     steps:
+      - checkout
       - run:
           name: run tests
           command: |
